@@ -1,0 +1,292 @@
+Di seguito sono riportati nel dettaglio i valori di inerzia presi da Inventor, per una versione semplificata guardare il file excel
+
+Proprietà fisiche di bottom_chassis
+Proprietà generali:
+	Materiale:	{}
+	Densità:	0,807 g/cm^3
+	Massa:	0,091 kg (Errore relativo = 0,338227%)
+	Area:	38572,496 mm^2 (Errore relativo = 0,413630%)
+	Volume:	112735,520 mm^3 (Errore relativo = 0,338227%)
+Baricentro:
+	X:	-0,842 mm (Errore relativo = 0,338227%)
+	Y:	8,303 mm (Errore relativo = 0,338227%)
+	Z:	-11,846 mm (Errore relativo = 0,338227%)
+Momenti di inerzia di massa in rapporto al baricentro(Calcolo eseguito con integrale negativo)
+	Ixx        	78,279 kg mm^2 (Errore relativo = 0,338227%)
+	Iyx Iyy    	1,165 kg mm^2 (Errore relativo = 0,338227%)	68,216 kg mm^2 (Errore relativo = 0,338227%)
+	Izx Izy Izz	-1,127 kg mm^2 (Errore relativo = 0,338227%)	5,874 kg mm^2 (Errore relativo = 0,338227%)	116,890 kg mm^2 (Errore relativo = 0,338227%)
+Momenti di inerzia di massa in rapporto a Globale(Calcolo eseguito con integrale negativo)
+	Ixx        	97,326 kg mm^2 (Errore relativo = 0,338227%)
+	Iyx Iyy    	1,801 kg mm^2 (Errore relativo = 0,338227%)	81,054 kg mm^2 (Errore relativo = 0,338227%)
+	Izx Izy Izz	-2,035 kg mm^2 (Errore relativo = 0,338227%)	14,826 kg mm^2 (Errore relativo = 0,338227%)	123,229 kg mm^2 (Errore relativo = 0,338227%)
+Momenti di inerzia principali in rapporto al baricentro
+	I1:	78,407 kg mm^2 (Errore relativo = 0,338227%)
+	I2:	67,365 kg mm^2 (Errore relativo = 0,338227%)
+	I3:	117,614 kg mm^2 (Errore relativo = 0,338227%)
+Rotazione da globale a principale
+	Rx:	6,75 gr (Errore relativo = 0,338227%)
+	Ry:	1,43 gr (Errore relativo = 0,338227%)
+	Rz:	-6,75 gr (Errore relativo = 0,338227%)
+
+
+Proprietà fisiche di bottom_shell
+Proprietà generali:
+	Materiale:	{}
+	Densità:	0,700 g/cm^3
+	Massa:	0,163 kg (Errore relativo = 0,210520%)
+	Area:	93573,747 mm^2 (Errore relativo = 0,201660%)
+	Volume:	233260,192 mm^3 (Errore relativo = 0,210520%)
+Baricentro:
+	X:	5,768 mm (Errore relativo = 0,210520%)
+	Y:	-10,134 mm (Errore relativo = 0,210520%)
+	Z:	0,339 mm (Errore relativo = 0,210520%)
+Momenti di inerzia di massa in rapporto al baricentro(Calcolo eseguito con integrale negativo)
+	Ixx        	215,101 kg mm^2 (Errore relativo = 0,210520%)
+	Iyx Iyy    	62,492 kg mm^2 (Errore relativo = 0,210520%)	607,733 kg mm^2 (Errore relativo = 0,210520%)
+	Izx Izy Izz	-0,006 kg mm^2 (Errore relativo = 0,210520%)	0,387 kg mm^2 (Errore relativo = 0,210520%)	488,957 kg mm^2 (Errore relativo = 0,210520%)
+Momenti di inerzia di massa in rapporto a Globale(Calcolo eseguito con integrale negativo)
+	Ixx        	231,895 kg mm^2 (Errore relativo = 0,210520%)
+	Iyx Iyy    	72,040 kg mm^2 (Errore relativo = 0,210520%)	613,186 kg mm^2 (Errore relativo = 0,210520%)
+	Izx Izy Izz	-0,326 kg mm^2 (Errore relativo = 0,210520%)	0,949 kg mm^2 (Errore relativo = 0,210520%)	511,166 kg mm^2 (Errore relativo = 0,210520%)
+Momenti di inerzia principali in rapporto al baricentro
+	I1:	205,395 kg mm^2 (Errore relativo = 0,210520%)
+	I2:	617,440 kg mm^2 (Errore relativo = 0,210520%)
+	I3:	488,956 kg mm^2 (Errore relativo = 0,210520%)
+Rotazione da globale a principale
+	Rx:	-0,17 gr (Errore relativo = 0,210520%)
+	Ry:	0,04 gr (Errore relativo = 0,210520%)
+	Rz:	8,83 gr (Errore relativo = 0,210520%)
+
+
+
+Proprietà fisiche di central_gear
+Proprietà generali:
+	Materiale:	{}
+	Densità:	1,541 g/cm^3
+	Massa:	0,046 kg (Errore relativo = 0,005727%)
+	Area:	14258,096 mm^2 (Errore relativo = 0,000000%)
+	Volume:	30017,595 mm^3 (Errore relativo = 0,005727%)
+Baricentro:
+	X:	0,000 mm (Errore relativo = 0,005727%)
+	Y:	-0,000 mm (Errore relativo = 0,005727%)
+	Z:	2,114 mm (Errore relativo = 0,005727%)
+Momenti di inerzia di massa in rapporto al baricentro(Calcolo eseguito con integrale negativo)
+	Ixx        	19,093 kg mm^2 (Errore relativo = 0,005727%)
+	Iyx Iyy    	-0,000 kg mm^2 (Errore relativo = 0,005727%)	19,092 kg mm^2 (Errore relativo = 0,005727%)
+	Izx Izy Izz	0,000 kg mm^2 (Errore relativo = 0,005727%)	-0,000 kg mm^2 (Errore relativo = 0,005727%)	37,842 kg mm^2 (Errore relativo = 0,005727%)
+Momenti di inerzia di massa in rapporto a Globale(Calcolo eseguito con integrale negativo)
+	Ixx        	19,300 kg mm^2 (Errore relativo = 0,005727%)
+	Iyx Iyy    	-0,000 kg mm^2 (Errore relativo = 0,005727%)	19,299 kg mm^2 (Errore relativo = 0,005727%)
+	Izx Izy Izz	0,000 kg mm^2 (Errore relativo = 0,005727%)	-0,000 kg mm^2 (Errore relativo = 0,005727%)	37,842 kg mm^2 (Errore relativo = 0,005727%)
+Momenti di inerzia principali in rapporto al baricentro
+	I1:	19,093 kg mm^2 (Errore relativo = 0,005727%)
+	I2:	19,092 kg mm^2 (Errore relativo = 0,005727%)
+	I3:	37,842 kg mm^2 (Errore relativo = 0,005727%)
+Rotazione da globale a principale
+	Rx:	0,00 gr (Errore relativo = 0,005727%)
+	Ry:	0,00 gr (Errore relativo = 0,005727%)
+	Rz:	9,33 gr (Errore relativo = 0,005727%)
+
+
+Proprietà fisiche di leg_B_01
+Proprietà generali:
+	Materiale:	{}
+	Densità:	0,725 g/cm^3
+	Massa:	0,042 kg (Errore relativo = 0,786654%)
+	Area:	32751,608 mm^2 (Errore relativo = 0,089052%)
+	Volume:	58152,591 mm^3 (Errore relativo = 0,786654%)
+Baricentro:
+	X:	31,947 mm (Errore relativo = 0,786654%)
+	Y:	6,793 mm (Errore relativo = 0,786654%)
+	Z:	-4,284 mm (Errore relativo = 0,786654%)
+Momenti di inerzia di massa in rapporto al baricentro(Calcolo eseguito con integrale negativo)
+	Ixx        	23,662 kg mm^2 (Errore relativo = 0,786654%)
+	Iyx Iyy    	-7,646 kg mm^2 (Errore relativo = 0,786654%)	84,936 kg mm^2 (Errore relativo = 0,786654%)
+	Izx Izy Izz	-5,504 kg mm^2 (Errore relativo = 0,786654%)	-1,135 kg mm^2 (Errore relativo = 0,786654%)	69,942 kg mm^2 (Errore relativo = 0,786654%)
+Momenti di inerzia di massa in rapporto a Globale(Calcolo eseguito con integrale negativo)
+	Ixx        	26,380 kg mm^2 (Errore relativo = 0,786654%)
+	Iyx Iyy    	-16,795 kg mm^2 (Errore relativo = 0,786654%)	128,738 kg mm^2 (Errore relativo = 0,786654%)
+	Izx Izy Izz	0,266 kg mm^2 (Errore relativo = 0,786654%)	0,091 kg mm^2 (Errore relativo = 0,786654%)	114,916 kg mm^2 (Errore relativo = 0,786654%)
+Momenti di inerzia principali in rapporto al baricentro
+	I1:	22,067 kg mm^2 (Errore relativo = 0,786654%)
+	I2:	85,889 kg mm^2 (Errore relativo = 0,786654%)
+	I3:	70,584 kg mm^2 (Errore relativo = 0,786654%)
+Rotazione da globale a principale
+	Rx:	0,88 gr (Errore relativo = 0,786654%)
+	Ry:	6,83 gr (Errore relativo = 0,786654%)
+	Rz:	-6,90 gr (Errore relativo = 0,786654%)
+
+
+
+Proprietà fisiche di leg_B_12
+Proprietà generali:
+	Materiale:	{}
+	Densità:	1,060 g/cm^3
+	Massa:	0,108 kg (Errore relativo = 0,000292%)
+	Area:	18303,876 mm^2 (Errore relativo = 0,000000%)
+	Volume:	102176,991 mm^3 (Errore relativo = 0,000292%)
+Baricentro:
+	X:	19,000 mm (Errore relativo = 0,000292%)
+	Y:	18,965 mm (Errore relativo = 0,000292%)
+	Z:	-5,285 mm (Errore relativo = 0,000292%)
+Momenti di inerzia di massa in rapporto al baricentro(Calcolo eseguito con integrale negativo)
+	Ixx        	39,153 kg mm^2 (Errore relativo = 0,000292%)
+	Iyx Iyy    	-11,242 kg mm^2 (Errore relativo = 0,000292%)	59,892 kg mm^2 (Errore relativo = 0,000292%)
+	Izx Izy Izz	11,242 kg mm^2 (Errore relativo = 0,000292%)	3,897 kg mm^2 (Errore relativo = 0,000292%)	59,892 kg mm^2 (Errore relativo = 0,000292%)
+Momenti di inerzia di massa in rapporto a Globale(Calcolo eseguito con integrale negativo)
+	Ixx        	81,135 kg mm^2 (Errore relativo = 0,000292%)
+	Iyx Iyy    	-50,269 kg mm^2 (Errore relativo = 0,000292%)	102,016 kg mm^2 (Errore relativo = 0,000292%)
+	Izx Izy Izz	22,117 kg mm^2 (Errore relativo = 0,000292%)	14,752 kg mm^2 (Errore relativo = 0,000292%)	137,948 kg mm^2 (Errore relativo = 0,000292%)
+Momenti di inerzia principali in rapporto al baricentro
+	I1:	29,584 kg mm^2 (Errore relativo = 0,000292%)
+	I2:	63,789 kg mm^2 (Errore relativo = 0,000292%)
+	I3:	65,565 kg mm^2 (Errore relativo = 0,000292%)
+Rotazione da globale a principale
+	Rx:	-45,00 gr (Errore relativo = 0,000292%)
+	Ry:	-31,05 gr (Errore relativo = 0,000292%)
+	Rz:	0,00 gr (Errore relativo = 0,000292%)
+
+Proprietà fisiche di leg_B_23
+Proprietà generali:
+	Materiale:	{}
+	Densità:	0,600 g/cm^3
+	Massa:	0,012 kg (Errore relativo = 0,115715%)
+	Area:	10020,236 mm^2 (Errore relativo = 0,090923%)
+	Volume:	20206,724 mm^3 (Errore relativo = 0,115715%)
+Baricentro:
+	X:	33,000 mm (Errore relativo = 0,115715%)
+	Y:	4,988 mm (Errore relativo = 0,115715%)
+	Z:	0,000 mm (Errore relativo = 0,115715%)
+Momenti di inerzia di massa in rapporto al baricentro(Calcolo eseguito con integrale negativo)
+	Ixx        	6,095 kg mm^2 (Errore relativo = 0,115715%)
+	Iyx Iyy    	0,000 kg mm^2 (Errore relativo = 0,115715%)	11,853 kg mm^2 (Errore relativo = 0,115715%)
+	Izx Izy Izz	-0,000 kg mm^2 (Errore relativo = 0,115715%)	0,000 kg mm^2 (Errore relativo = 0,115715%)	6,764 kg mm^2 (Errore relativo = 0,115715%)
+Momenti di inerzia di massa in rapporto a Globale(Calcolo eseguito con integrale negativo)
+	Ixx        	6,397 kg mm^2 (Errore relativo = 0,115715%)
+	Iyx Iyy    	-1,996 kg mm^2 (Errore relativo = 0,115715%)	25,056 kg mm^2 (Errore relativo = 0,115715%)
+	Izx Izy Izz	-0,000 kg mm^2 (Errore relativo = 0,115715%)	0,000 kg mm^2 (Errore relativo = 0,115715%)	20,269 kg mm^2 (Errore relativo = 0,115715%)
+Momenti di inerzia principali in rapporto al baricentro
+	I1:	6,095 kg mm^2 (Errore relativo = 0,115715%)
+	I2:	11,853 kg mm^2 (Errore relativo = 0,115715%)
+	I3:	6,764 kg mm^2 (Errore relativo = 0,115715%)
+Rotazione da globale a principale
+	Rx:	0,00 gr (Errore relativo = 0,115715%)
+	Ry:	0,00 gr (Errore relativo = 0,115715%)
+	Rz:	0,00 gr (Errore relativo = 0,115715%)
+
+Proprietà fisiche di leg_U_01
+Proprietà generali:
+	Materiale:	{}
+	Densità:	0,600 g/cm^3
+	Massa:	0,016 kg (Errore relativo = 0,101777%)
+	Area:	13031,148 mm^2 (Errore relativo = 0,157611%)
+	Volume:	27201,724 mm^3 (Errore relativo = 0,101777%)
+Baricentro:
+	X:	42,500 mm (Errore relativo = 0,101777%)
+	Y:	4,655 mm (Errore relativo = 0,101777%)
+	Z:	-0,001 mm (Errore relativo = 0,101777%)
+Momenti di inerzia di massa in rapporto al baricentro(Calcolo eseguito con integrale negativo)
+	Ixx        	8,293 kg mm^2 (Errore relativo = 0,101777%)
+	Iyx Iyy    	-0,000 kg mm^2 (Errore relativo = 0,101777%)	20,551 kg mm^2 (Errore relativo = 0,101777%)
+	Izx Izy Izz	0,000 kg mm^2 (Errore relativo = 0,101777%)	-0,000 kg mm^2 (Errore relativo = 0,101777%)	13,722 kg mm^2 (Errore relativo = 0,101777%)
+Momenti di inerzia di massa in rapporto a Globale(Calcolo eseguito con integrale negativo)
+	Ixx        	8,647 kg mm^2 (Errore relativo = 0,101777%)
+	Iyx Iyy    	-3,229 kg mm^2 (Errore relativo = 0,101777%)	50,031 kg mm^2 (Errore relativo = 0,101777%)
+	Izx Izy Izz	0,001 kg mm^2 (Errore relativo = 0,101777%)	0,000 kg mm^2 (Errore relativo = 0,101777%)	43,556 kg mm^2 (Errore relativo = 0,101777%)
+Momenti di inerzia principali in rapporto al baricentro
+	I1:	8,293 kg mm^2 (Errore relativo = 0,101777%)
+	I2:	20,551 kg mm^2 (Errore relativo = 0,101777%)
+	I3:	13,722 kg mm^2 (Errore relativo = 0,101777%)
+Rotazione da globale a principale
+	Rx:	0,00 gr (Errore relativo = 0,101777%)
+	Ry:	-0,00 gr (Errore relativo = 0,101777%)
+	Rz:	-0,00 gr (Errore relativo = 0,101777%)
+
+Proprietà fisiche di middle_chassis
+Proprietà generali:
+	Materiale:	{}
+	Densità:	0,600 g/cm^3
+	*Massa:	0,049 kg (Errore relativo = 0,988135%)
+	Area:	40499,485 mm^2 (Errore relativo = 0,419452%)
+	Volume:	80858,150 mm^3 (Errore relativo = 0,988135%)
+**Baricentro:
+	X:	-0,601 mm (Errore relativo = 0,988135%)
+	Y:	-0,908 mm (Errore relativo = 0,988135%)
+	Z:	0,008 mm (Errore relativo = 0,988135%)
+**Momenti di inerzia di massa in rapporto al baricentro(Calcolo eseguito con integrale negativo)
+	Ixx        	96,720 kg mm^2 (Errore relativo = 0,988135%)
+	Iyx Iyy    	-0,732 kg mm^2 (Errore relativo = 0,988135%)	91,691 kg mm^2 (Errore relativo = 0,988135%)
+	Izx Izy Izz	0,001 kg mm^2 (Errore relativo = 0,988135%)	0,002 kg mm^2 (Errore relativo = 0,988135%)	188,205 kg mm^2 (Errore relativo = 0,988135%)
+**Momenti di inerzia di massa in rapporto a Globale(Calcolo eseguito con integrale negativo)
+	Ixx        	96,760 kg mm^2 (Errore relativo = 0,988135%)
+	Iyx Iyy    	-0,759 kg mm^2 (Errore relativo = 0,988135%)	91,709 kg mm^2 (Errore relativo = 0,988135%)
+	Izx Izy Izz	0,001 kg mm^2 (Errore relativo = 0,988135%)	0,002 kg mm^2 (Errore relativo = 0,988135%)	188,263 kg mm^2 (Errore relativo = 0,988135%)
+**Momenti di inerzia principali in rapporto al baricentro
+	I1:	96,824 kg mm^2 (Errore relativo = 0,988135%)
+	I2:	91,587 kg mm^2 (Errore relativo = 0,988135%)
+	I3:	188,205 kg mm^2 (Errore relativo = 0,988135%)
+**Rotazione da globale a principale
+	Rx:	0,00 gr (Errore relativo = 0,988135%)
+	Ry:	-0,00 gr (Errore relativo = 0,988135%)
+	Rz:	8,12 gr (Errore relativo = 0,988135%)
+*I calcoli sono basati sui valori sovrascritti dall'utente.
+**I valori non riflettono la massa o il volume sostituiti dall'utente.
+
+
+Proprietà fisiche di upper_chassis
+Proprietà generali:
+	Materiale:	{}
+	Densità:	0,873 g/cm^3
+	Massa:	0,413 kg (Errore relativo = 0,028856%)
+	Area:	122134,235 mm^2 (Errore relativo = 0,000000%)
+	Volume:	472977,301 mm^3 (Errore relativo = 0,028856%)
+Baricentro:
+	X:	-0,006 mm (Errore relativo = 0,028856%)
+	Y:	-0,010 mm (Errore relativo = 0,028856%)
+	Z:	22,705 mm (Errore relativo = 0,028856%)
+Momenti di inerzia di massa in rapporto al baricentro(Calcolo eseguito con integrale negativo)
+	Ixx        	860,327 kg mm^2 (Errore relativo = 0,028856%)
+	Iyx Iyy    	1,129 kg mm^2 (Errore relativo = 0,028856%)	861,630 kg mm^2 (Errore relativo = 0,028856%)
+	Izx Izy Izz	-0,050 kg mm^2 (Errore relativo = 0,028856%)	-0,087 kg mm^2 (Errore relativo = 0,028856%)	1570,515 kg mm^2 (Errore relativo = 0,028856%)
+Momenti di inerzia di massa in rapporto a Globale(Calcolo eseguito con integrale negativo)
+	Ixx        	1073,272 kg mm^2 (Errore relativo = 0,028856%)
+	Iyx Iyy    	1,129 kg mm^2 (Errore relativo = 0,028856%)	1074,575 kg mm^2 (Errore relativo = 0,028856%)
+	Izx Izy Izz	0,006 kg mm^2 (Errore relativo = 0,028856%)	0,011 kg mm^2 (Errore relativo = 0,028856%)	1570,515 kg mm^2 (Errore relativo = 0,028856%)
+Momenti di inerzia principali in rapporto al baricentro
+	I1:	859,676 kg mm^2 (Errore relativo = 0,028856%)
+	I2:	862,282 kg mm^2 (Errore relativo = 0,028856%)
+	I3:	1570,515 kg mm^2 (Errore relativo = 0,028856%)
+Rotazione da globale a principale
+	Rx:	-0,01 gr (Errore relativo = 0,028856%)
+	Ry:	0,00 gr (Errore relativo = 0,028856%)
+	Rz:	30,00 gr (Errore relativo = 0,028856%)
+
+
+
+Proprietà fisiche di upper_shell
+Proprietà generali:
+	Materiale:	{}
+	Densità:	0,719 g/cm^3
+	Massa:	0,142 kg (Errore relativo = 0,564505%)
+	Area:	82587,684 mm^2 (Errore relativo = 0,441663%)
+	Volume:	197379,167 mm^3 (Errore relativo = 0,564505%)
+Baricentro:
+	X:	40,380 mm (Errore relativo = 0,564505%)
+	Y:	4,257 mm (Errore relativo = 0,564505%)
+	Z:	-0,381 mm (Errore relativo = 0,564505%)
+Momenti di inerzia di massa in rapporto al baricentro(Calcolo eseguito con integrale negativo)
+	Ixx        	218,090 kg mm^2 (Errore relativo = 0,564505%)
+	Iyx Iyy    	93,916 kg mm^2 (Errore relativo = 0,564505%)	523,396 kg mm^2 (Errore relativo = 0,564505%)
+	Izx Izy Izz	0,125 kg mm^2 (Errore relativo = 0,564505%)	-0,103 kg mm^2 (Errore relativo = 0,564505%)	417,752 kg mm^2 (Errore relativo = 0,564505%)
+Momenti di inerzia di massa in rapporto a Globale(Calcolo eseguito con integrale negativo)
+	Ixx        	220,683 kg mm^2 (Errore relativo = 0,564505%)
+	Iyx Iyy    	69,518 kg mm^2 (Errore relativo = 0,564505%)	754,841 kg mm^2 (Errore relativo = 0,564505%)
+	Izx Izy Izz	2,311 kg mm^2 (Errore relativo = 0,564505%)	0,128 kg mm^2 (Errore relativo = 0,564505%)	651,749 kg mm^2 (Errore relativo = 0,564505%)
+Momenti di inerzia principali in rapporto al baricentro
+	I1:	191,514 kg mm^2 (Errore relativo = 0,564505%)
+	I2:	549,972 kg mm^2 (Errore relativo = 0,564505%)
+	I3:	417,752 kg mm^2 (Errore relativo = 0,564505%)
+Rotazione da globale a principale
+	Rx:	0,02 gr (Errore relativo = 0,564505%)
+	Ry:	-0,04 gr (Errore relativo = 0,564505%)
+	Rz:	15,80 gr (Errore relativo = 0,564505%)

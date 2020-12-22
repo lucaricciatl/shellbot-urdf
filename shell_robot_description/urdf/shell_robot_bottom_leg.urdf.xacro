@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<xacro:include filename="$(find shell_robot_description)/urdf/variables.urdf.xacro" />
+	
+	
+    
+    <leg prefix="prefix leg_B" />
+	<xacro:macro name="bottom_leg" params="leg_num_B">
+	  <xacro:include filename="$(find shell_robot_description)/urdf/variables.urdf.xacro" />
+		<!-- ******* DH from middle chassis to folding fan joint 1******* -->
+		<xacro:property name="DH_FF_B_pos" value="0 0 -${Dchassis}" />
+		<xacro:property name="DH_FF_B_rot" value="0 0 ${1.04719*leg_num_B}" />
+		<!-- **************************************************************************************************************************************** -->
+		<!-- ******* KINEMATIC PROPRIETIS (JOINTS) ******* -->
+		<!-- **************************************************************************************************************************************** -->
+		<!-- base to folding fan bottom joint -->
+		<joint name="FF_B_joint_${leg_num_B}" type="fixed">
+			<parent link="base_link" />
+			<child link="FF_link_B_${leg_num_B}" />
+			<origin rpy="${DH_FF_B_rot}" xyz="${DH_FF_B_pos}" />
+			<!-- limit effort="0" velocity="0.0" upper="0.0001" lower ="-0.0001" / -->
+			<dynamics damping="${damp}" friction="${friction}" />
+			<axis xyz="0 0 1" />
+		</joint>
+		<!-- q_1_1_0 FIXED -->
+		<joint name="q_1_${leg_num_B}_0_FIXED" type="fixed">
+			<parent link="FF_link_B_${leg_num_B}" />
+			<child link="leg_B_${leg_num_B}_1" />
+			<origin rpy="${DH_L01_B_rot}" xyz="${DH_L01_B_pos}" />
+			<dynamics damping="${damp}" friction="${friction}" />
+			<!-- limit effort="0" velocity="0.0" upper="0.0001" lower ="-0.0001" / -->
+			<axis xyz="0 0 1" />
+		</joint>
+		<!-- q_1_i_1 -->
+		<joint name="q_1_${leg_num_B}_1" type="revolute">
+			<parent link="leg_B_${leg_num_B}_1" />
+			<child link="leg_B_${leg_num_B}_2" />
+			<origin rpy="${DH_q_1_1_1_pos}" xyz="${DH_q_1_1_1_pos}" />
+			<limit effort="${AX_12A_maxeffort}" velocity="${AX_12A_maxspeed}" upper="${q1_max_pos}" lower="${q1_min_pos}" />
+			<dynamics damping="${damp}" friction="${friction}" />
+			<mimic joint="q_c" multiplier="1" offset="0" /><!-- se il mimik da problemi disattiva qui / -->
+			<axis xyz="0 0 1" />
+		</joint>
+		<!-- q_1_i_2 -->
+		<joint name="q_1_${leg_num_B}_2" type="revolute">
+			<parent link="leg_B_${leg_num_B}_2" />
+			<child link="leg_B_${leg_num_B}_3" />
+			<origin rpy="${DH_q_1_1_2_rot}" xyz="${DH_q_1_1_2_pos}" />
+			<limit effort="${AX_12A_maxeffort}" velocity="${AX_12A_maxspeed}" upper="${q2_max_pos}" lower="${q2_min_pos}" />
+			<dynamics damping="${damp}" friction="${friction}" />
+			<axis xyz="0 0 1" />
+		</joint>
+		<!-- q_1_i_3 -->
+		<joint name="q_1_${leg_num_B}_3" type="revolute">
+			<parent link="leg_B_${leg_num_B}_3" />
+			<child link="leg_B_${leg_num_B}_4" />
+			<origin rpy="${DH_q_1_1_3_rot}" xyz="${DH_q_1_1_3_pos}" />
+			<limit effort="${AX_18A_maxeffort}" velocity="${AX_18A_maxspeed}" upper="${q3_max_pos}" lower="${q3_min_pos}" />
+			<dynamics damping="${damp}" friction="${friction}" />
+			<axis xyz="0 1 0" />
+		</joint>
+		<!-- q_1_i_4 -->
+		<joint name="q_1_${leg_num_B}_4" type="revolute">
+			<parent link="leg_B_${leg_num_B}_4" />
+			<child link="leg_B_${leg_num_B}_5" />
+			<origin rpy="${DH_q_1_1_4_rot}" xyz="${DH_q_1_1_4_pos}" />
+			<limit effort="${AX_18A_maxeffort}" velocity="${AX_18A_maxspeed}" upper="${q4_max_pos}" lower="${q4_min_pos}" />
+			<dynamics damping="${damp}" friction="${friction}" />
+			<axis xyz="0 0 1" />
+		</joint>
+		<!-- **************************************************************************************************************************************** -->
+		<!-- ******* INERTIAL PROPRIETIS (LINKS) ******* -->
+		<!-- **************************************************************************************************************************************** -->
+		<!-- folding fan robot bottom link -->
+		<link name="FF_link_B_${leg_num_B}">
+            <xacro:default_pose/>
+			<xacro:default_collisions/>
+			<inertial>
+				<mass value="${CG_m}" />
+				<xacro:visual_off_FF_link_B_i/>
+				<xacro:FF_link_U_inertia/>
+			</inertial>
+			<visual>
+				<xacro:visual_off_FF_link_B_i/>
+				<xacro:central_gear_geometry/>
+			</visual>
+		</link>
+		<!-- folding fan robot bottom link -->
+		<link name="leg_B_${leg_num_B}_1">
+			<xacro:default_pose/>
+			<xacro:default_collisions/>
+			<inertial>
+				<mass value="${OG_m}" />
+				<inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.01" izz="0.01" />
+			</inertial>
+		</link>
+		<!-- leg_B_i_2 link -->
+		<link name="leg_B_${leg_num_B}_2">
+			<xacro:default_pose/>
+			<xacro:default_collisions/>
+			<inertial>
+				<mass value="${LB12_m}" />
+				<xacro:visual_off_leg_B_i_2/>
+				<xacro:leg_B_i_2_inertia/>
+			</inertial>
+			<collision name="leg_B_${leg_num_B}_2">
+				<xacro:visual_off_leg_B_i_2/>
+				<xacro:leg_B_01_geometry/>
+				<default_surface />
+			</collision>
+			<visual>
+				<xacro:visual_off_leg_B_i_2/>
+				<xacro:leg_B_01_geometry/>
+			</visual>
+		</link>
+		<!-- leg_B_i_3 link -->
+		<link name="leg_B_${leg_num_B}_3">
+			<xacro:default_pose/>
+			<xacro:default_collisions/>
+			<inertial>
+				<mass value="${LB23_m}" />
+				<xacro:visual_off_leg_B_i_3/>
+				<xacro:leg_B_i_3_inertia/>
+			</inertial>
+			<collision name="leg_B_${leg_num_B}_3">
+				<xacro:visual_off_leg_B_i_3/>
+				<xacro:leg_B_12_geometry/>
+				<default_surface />
+			</collision>
+			<visual>
+				<xacro:visual_off_leg_B_i_3/>
+				<xacro:leg_B_12_geometry/>
+			</visual>
+		</link>
+		<!-- leg_B_i_4 link -->
+		<link name="leg_B_${leg_num_B}_4">
+			<xacro:default_pose/>
+			<xacro:default_collisions/>
+			<inertial>
+				<mass value="${LB34_m}" />
+				<xacro:visual_off_leg_B_i_4/>
+				<xacro:leg_B_i_4_inertia/>
+			</inertial>
+			<collision name="leg_B_${leg_num_B}_4">
+				<xacro:visual_off_leg_B_i_4/>
+				<xacro:leg_B_23_geometry/>
+			</collision>
+			<default_surface />
+			<visual>
+				<xacro:visual_off_leg_B_i_4/>
+				<xacro:leg_B_23_geometry/>
+			</visual>
+		</link>
+		<!-- leg_B_i_5 link -->
+		<link name="leg_B_${leg_num_B}_5">
+			<xacro:default_pose/>
+			<xacro:default_collisions/>
+			<inertial>
+				<mass value="${LB45_m}" />
+				<xacro:visual_off_leg_B_i_5/>
+				<xacro:leg_B_i_5_inertia/>
+			</inertial>
+			<collision name="leg_B_${leg_num_B}_5">
+				<xacro:visual_off_leg_B_i_5/>
+				<xacro:leg_B_34_geometry/>
+				<default_surface />
+			</collision>
+			<visual>
+				<xacro:visual_off_leg_B_i_5/>
+				<xacro:leg_B_34_geometry/>
+			</visual>
+		</link>
+
+		<gazebo reference="folding_fan_link_${leg_num_B}">
+			<implicitSpringDamper>
+				True
+			</implicitSpringDamper>
+			<xacro:default_collisions/>
+		</gazebo>
+		<gazebo reference="folding_fan_link_${leg_num_B}">
+			<implicitSpringDamper>
+				True
+			</implicitSpringDamper>
+			<xacro:default_collisions/>
+		</gazebo>
+		<gazebo reference="leg_B_${leg_num_B}_0">
+			<implicitSpringDamper>
+				True
+			</implicitSpringDamper>
+			<selfCollide>
+				1
+			</selfCollide>
+		</gazebo>
+		<gazebo reference="leg_B_${leg_num_B}_1">
+			<implicitSpringDamper>
+				True
+			</implicitSpringDamper>
+			<xacro:default_collisions/>
+		</gazebo>
+		<gazebo reference="leg_B_${leg_num_B}_2">
+			<implicitSpringDamper>
+				True
+			</implicitSpringDamper>
+			<xacro:default_collisions/>
+		</gazebo>
+		<gazebo reference="leg_B_${leg_num_B}_3">
+			<implicitSpringDamper>
+				True
+			</implicitSpringDamper>
+			<xacro:default_collisions/>
+		</gazebo>
+		<gazebo reference="leg_B_${leg_num_B}_4">
+			<implicitSpringDamper>
+				True
+			</implicitSpringDamper>
+			<xacro:default_collisions/>
+		</gazebo>
+		<gazebo reference="leg_B_${leg_num_B}_5">
+			<implicitSpringDamper>
+				True
+			</implicitSpringDamper>
+			<xacro:default_collisions/>
+		</gazebo>
+		<transmission name="tran_1_${leg_num_B}_1">
+			<type>
+				transmission_interface/SimpleTransmission
+			</type>
+			<joint name="q_1_${leg_num_B}_1">
+				<hardwareInterface>
+					hardware_interface/PositionJointInterface
+				</hardwareInterface>
+			</joint>
+			<actuator name="motor_1_${leg_num_B}_1">
+				<hardwareInterface>
+					hardware_interface/PositionJointInterface
+				</hardwareInterface>
+				<mechanicalReduction>
+					1
+				</mechanicalReduction>
+			</actuator>
+		</transmission>
+		<transmission name="tran_1_${leg_num_B}_2">
+			<type>
+				transmission_interface/SimpleTransmission
+			</type>
+			<joint name="q_1_${leg_num_B}_2">
+				<hardwareInterface>
+					hardware_interface/PositionJointInterface
+				</hardwareInterface>
+			</joint>
+			<actuator name="motor_1_${leg_num_B}_2">
+				<hardwareInterface>
+					hardware_interface/PositionJointInterface
+				</hardwareInterface>
+				<mechanicalReduction>
+					1
+				</mechanicalReduction>
+			</actuator>
+		</transmission>
+		<transmission name="tran_1_${leg_num_B}_3">
+			<type>
+				transmission_interface/SimpleTransmission
+			</type>
+			<joint name="q_1_${leg_num_B}_3">
+				<hardwareInterface>
+					hardware_interface/PositionJointInterface
+				</hardwareInterface>
+			</joint>
+			<actuator name="motor_1_${leg_num_B}_3">
+				<hardwareInterface>
+					hardware_interface/PositionJointInterface
+				</hardwareInterface>
+				<mechanicalReduction>
+					1
+				</mechanicalReduction>
+			</actuator>
+		</transmission>
+		<transmission name="tran_1_${leg_num_B}_4">
+			<type>
+				transmission_interface/SimpleTransmission
+			</type>
+			<joint name="q_1_${leg_num_B}_4">
+				<hardwareInterface>
+					hardware_interface/PositionJointInterface
+				</hardwareInterface>
+			</joint>
+			<actuator name="motor_1_${leg_num_B}_4_">
+				<hardwareInterface>
+					hardware_interface/PositionJointInterface
+				</hardwareInterface>
+				<mechanicalReduction>
+					1
+				</mechanicalReduction>
+			</actuator>
+		</transmission>
+	</xacro:macro>
+</robot>

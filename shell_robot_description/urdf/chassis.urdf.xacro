@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find shell_robot_description)/urdf/variables.urdf.xacro" />
+
+
+
+    <!-- **************************************************************************************************************************************** -->
+    <!-- ******* BASE LINK AND JOINTS ******* -->
+    <!-- **************************************************************************************************************************************** -->
+
+    <!--***fixed joints***-->
+
+    <!--world joint
+    <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+  </joint>  -->
+
+    <!--from map to robot-->
+    <joint name="to_robot" type="fixed">
+        <parent link="map"/>
+        <child link="base_link"/>
+        <origin rpy="0 0 0" xyz="0 0 ${LB_34+LB_45}"/>
+        <dynamics damping="${damp}" friction="${friction}" />
+    </joint>
+
+    <!--base to bottom joint-->
+    <joint name="bottom_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="bottom_chassis"/>
+        <origin rpy="${DH_B_rot}" xyz="${DH_B_pos}"/>
+        <dynamics damping="${damp}" friction="${friction}" />
+        <!--limit effort="0" velocity="0.0" upper="0.0001" lower ="-0.0001" /-->
+    </joint>
+
+    <!--base to upper joint-->
+    <joint name="upper_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="upper_chassis"/>
+        <origin rpy="${DH_U_rot}" xyz="${DH_U_pos}"/>
+        <dynamics damping="${damp}" friction="${friction}" />
+        <!--limit effort="0" velocity="0.0" upper="0.0001" lower ="-0.0001" /-->
+    </joint>
+
+    <!--MAP LINK-->
+
+    <link name="map">
+        <xacro:default_collisions/>
+        <xacro:default_surface/>
+    </link>
+
+    <!--BASE LINKS-->
+    <link name="base_link">
+        <xacro:default_pose/>
+        <xacro:default_collisions/>
+        <inertial>
+            <mass value="${middle_chassis_m}"/>
+            <origin rpy ="0 0 0" xyz="${spawn_center}"/>
+            <xacro:base_link_inertia/>
+        </inertial>
+        <collision name="base_link">
+            <xacro:visual_off_base_link/>
+            <xacro:base_link_geometry/>
+            <xacro:default_surface/>
+        </collision>
+        <visual>
+        	<xacro:visual_off_base_link/>
+            <xacro:base_link_geometry/>
+        </visual>
+    </link>
+
+    <!--chassis robot upper link-->
+    <link name="upper_chassis">
+        <xacro:default_pose/>
+        <xacro:default_collisions/>
+        <inertial>
+            <mass value="${upper_chassis_m}"/>
+            <origin rpy ="0 0 0" xyz="0 0 0"/>
+        <xacro:bottom_chassis_inertia/>       
+        </inertial>
+        <collision name="upper_chassis">
+            <xacro:upper_chassis_geometry/>
+            <xacro:default_surface/>
+        </collision>
+        <visual>
+            <xacro:upper_chassis_geometry/>
+        </visual>
+    </link>
+
+    <!--chassis robot bottom link-->
+    <link name="bottom_chassis">
+        <xacro:default_pose/>
+        <xacro:default_collisions/>
+        <inertial>
+            <mass value="${bottom_chassis_m}"/>
+            <origin rpy ="0 0 0" xyz="0 0 -0.4"/>
+            <xacro:bottom_chassis_inertia/>
+        </inertial>
+        <collision name="bottom_chassis">
+            <xacro:bottom_chassis_geometry/>
+            <xacro:default_surface/>
+        </collision>
+        <visual>
+        <xacro:bottom_chassis_geometry/>
+        </visual>
+    </link>
+
+
+    <!--mimik base-->
+    <joint name="q_c" type="revolute">
+        <parent link="base_link"/>
+        <child link="support_c"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        <limit effort="${AX_12A_maxeffort}" velocity="${AX_12A_maxspeed}" upper="${q1_max_pos}" lower ="${q1_min_pos}" />
+        <dynamics damping="${damp}" friction="${friction}" />
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="support_c">
+        <xacro:default_pose/>
+        <xacro:default_collisions/>
+        <inertial>
+            <mass value="0.001"/>
+            <origin rpy ="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001"/>
+        </inertial>
+    </link>
+
+
+    <transmission name="tran_1_q_c">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="q_c">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_q_c">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <gazebo reference="support_c">
+        <xacro:default_collisions/>
+        <implicitSpringDamper>True</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="bottom_chassis">
+        <xacro:default_collisions/>
+        <implicitSpringDamper>True</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="map">
+        <xacro:default_collisions/>
+        <implicitSpringDamper>True</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="upper_chassis">
+        <implicitSpringDamper>True</implicitSpringDamper>
+        <xacro:default_collisions/>
+        <implicitSpringDamper>True</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="base_link">
+        <implicitSpringDamper>True</implicitSpringDamper>
+        <xacro:default_collisions/>
+    </gazebo>
+
+
+</robot>

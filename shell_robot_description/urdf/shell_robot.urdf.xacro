@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name ="shell_robot">
+
+  <xacro:arg name="leg_num_B" default=""/>
+  <xacro:arg name="leg_num_U" default=""/>
+
+  <xacro:include filename="$(find shell_robot_description)/urdf/variables.urdf.xacro" />
+  <xacro:include filename="$(find shell_robot_description)/urdf/shell_robot_bottom_leg.urdf.xacro" />
+  <xacro:include filename="$(find shell_robot_description)/urdf/shell_robot_upper_leg.urdf.xacro" />
+  <xacro:include filename="$(find shell_robot_description)/urdf/chassis.urdf.xacro" />
+
+
+  <xacro:bottom_leg leg_num_B="1" />
+  <xacro:bottom_leg leg_num_B="2" />
+  <xacro:bottom_leg leg_num_B="3" />
+  <xacro:bottom_leg leg_num_B="4" />
+  <xacro:bottom_leg leg_num_B="5" />
+  <xacro:bottom_leg leg_num_B="6" />
+
+  <xacro:upper_leg leg_num_U="1" />
+  <xacro:upper_leg leg_num_U="2" />
+  <xacro:upper_leg leg_num_U="3" />
+  <xacro:upper_leg leg_num_U="4" />
+  <xacro:upper_leg leg_num_U="5" />
+  <xacro:upper_leg leg_num_U="6" />
+
+  <xacro:ode_solver/>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/shell_robot</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+</robot>

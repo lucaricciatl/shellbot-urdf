@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find shell_robot_description)/urdf/variables.urdf.xacro" />
+
+
+    <leg prefix="prefix leg_U" />
+    <xacro:macro name="upper_leg" params="leg_num_U">     
+    
+       <!-- ******* DH from folding fan to leg_i  upper******* -->
+        <xacro:property name="DH_U_FF_pos" value="0 0 ${U_distance_Z}" />
+        <xacro:property name="DH_U_FF_rot" value="0 0 ${1.04719*leg_num_U}" />
+        
+        <!--base to folding fan bottom joint-->
+        <joint name="FF_U_joint_${leg_num_U}" type="fixed">
+            <parent link="base_link"/>
+            <child link="FF_link_U_${leg_num_U}"/>
+            <origin rpy="${DH_U_FF_rot}" xyz="${DH_U_FF_pos}"/>
+            <!--limit effort="0" velocity="0.0" upper="0.0001" lower ="-0.0001" /-->
+            <dynamics damping="${damp}" friction="${friction}" />
+        </joint>       
+         <!--fixed link-->
+
+        <link name="FF_link_U_${leg_num_U}">
+            <xacro:default_pose/>
+            <xacro:default_collisions/>
+            <xacro:visual_off_FF_link_U_i/>
+            <xacro:default_surface/>
+            <inertial>
+                <mass value="0.1"/>
+                <xacro:visual_off_FF_link_U_i/>
+                <xacro:FF_link_U_inertia/>
+            </inertial>
+        </link>     
+           <!--q_2_i_1-->
+        <joint name="q_2_${leg_num_U}_1" type="revolute">
+            <parent link="FF_link_U_${leg_num_U}"/>
+            <child link="L_U_${leg_num_U}_1"/>
+            <origin rpy="${DH_q_2_1_1_rot}" xyz="${DH_q_2_1_1_pos}"/>
+            <limit effort="${AX_12A_maxeffort}" velocity="${AX_12A_maxspeed}" upper="${q_U_1_max_pos}" lower ="${q_U_1_min_pos}" />
+            <dynamics damping="${damp}" friction="${friction}" />
+            <axis xyz="0 1 0"/>
+        </joint>     
+           <!--q_2_i_2-->
+        <joint name="q_2_${leg_num_U}_2" type="revolute">
+            <parent link="L_U_${leg_num_U}_1"/>
+            <child link="L_U_${leg_num_U}_2"/>
+            <origin rpy="${DH_q_2_1_2_rot}" xyz="${DH_q_2_1_2_pos}"/>
+            <limit effort="${AX_12A_maxeffort}" velocity="${AX_12A_maxspeed}" upper="${q_U_2_max_pos}" lower ="${q_U_2_min_pos}" />
+            <dynamics damping="${damp}" friction="${friction}" />
+            <axis xyz="0 1 0"/>
+        </joint>      
+          <!--leg_U_i_1 link-->
+        <link name="L_U_${leg_num_U}_1">
+            <xacro:default_pose/>
+            <xacro:default_collisions/>
+            <inertial>
+                <xacro:visual_off_leg_U_i_1/>
+                <mass value="${L_U_12_m}"/>
+                <xacro:leg_U_i_1_inertia/>
+            </inertial>
+            <collision name="L_U_${leg_num_U}_1">
+                <xacro:visual_off_leg_U_i_1/>
+                <xacro:leg_U_01_geometry/>
+                <xacro:default_surface/>
+            </collision>
+            <visual>
+                <xacro:visual_off_leg_U_i_1/>
+                <xacro:leg_U_01_geometry/>
+            </visual>
+        </link>      
+          <!--leg_U_i_1 link-->
+        <link name="L_U_${leg_num_U}_2">
+            <xacro:default_pose/>
+            <xacro:default_collisions/>
+            <inertial>
+                <xacro:visual_off_leg_U_i_2/>
+                <mass value="${L_U_12_m}"/>
+                <xacro:leg_U_i_2_inertia/>
+            </inertial>
+            <collision name="L_U_${leg_num_U}_2">
+                <xacro:visual_off_leg_U_i_2/>
+                <xacro:leg_U_12_geometry/>
+                <xacro:default_surface/>
+            </collision>
+            <visual>
+                <xacro:visual_off_leg_U_i_2/>
+                <xacro:leg_U_12_geometry/>
+            </visual>
+        </link>
+
+        <gazebo reference="FF_link_U_${leg_num_U}">
+            <implicitSpringDamper>True</implicitSpringDamper>
+            <xacro:default_collisions/>
+        </gazebo>
+        <gazebo reference="leg_U_${leg_num_U}_1">
+            <implicitSpringDamper>True</implicitSpringDamper>
+            <xacro:default_collisions/>
+        </gazebo>
+        <gazebo reference="leg_U_${leg_num_U}_2">
+            <implicitSpringDamper>True</implicitSpringDamper>
+            <xacro:default_collisions/>
+        </gazebo>
+
+        <transmission name="tran_2_${leg_num_U}_1">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="q_2_${leg_num_U}_1">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="motor_2_${leg_num_U}_1">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+        <transmission name="tran_2_${leg_num_U}_2">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="q_2_${leg_num_U}_2">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="motor_2_${leg_num_U}_2">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+    </xacro:macro>
+</robot>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find shell_robot_description)/urdf/shell_robot.urdf.xacro'"/>
+
+    <!--combine joints value -->
+    <node name="robot_state_publisher_rviz" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <!--send joints value-->
+    <node name="joint_state_publisher_rviz" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+        <!--param name="use_gui" value="True"/-->
+    </node>
+
+    <!-- show in rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find shell_robot_description)/launch/config.rviz"/>
+</launch>
