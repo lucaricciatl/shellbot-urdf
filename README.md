@@ -1,2 +1,2 @@
 # shell-robot-urdf
-fully parametrized URDF for shell robot simulation
+URDF for shell robot simulation
