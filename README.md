@@ -2,6 +2,9 @@
 
 The simulated robot, named "shell" due to its distinctive shell-like shape, is a parallel robot specifically characterized as a hexapod. It not only has the capability to walk like a hexapod but also features an additional mode of movement—it can roll and advance like a ball.
 
+![Alt Text](shell-robot.png) 
+
+
 ## Features
 
 - **Hexapod Configuration:** The robot is equipped with six legs or limbs, providing enhanced stability and flexibility in movement.
