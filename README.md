@@ -30,4 +30,31 @@ The "shell" robot serves various purposes owing to its unique features:
 
 The simulation of the robot is an integral part of its development. Virtual testing allows for the optimization of the robot's behavior under various conditions before real-world implementation.
 
+## Launching Simulation using `shell_robot_gazebo.launch`
+
+1. **Open a Terminal:**
+   Open a terminal on your system where you have ROS installed.
+
+2. **Navigate to the Package:**
+   Change your directory to the package containing the launch file. Assuming your package is named `shell_robot`, you can use the following command:
+   ```bash
+   cd path/to/your/catkin_workspace/src/shell_robot
+3.  **source ROS
+    ```bash
+    source /opt/ros/<your_ros_version>/setup.bash 
+4. build the Package:
+    ```bash
+    catkin_make
+5. source again
+   ```bash
+   source devel/setup.bash
+7. launch
+   ```bash
+   Roslaunch shell_robot_gazebo shell_robot_gazebo.launch
+
+### Note:
+This assumes that your launch file is correctly set up and configured. If there are any errors or missing dependencies, you may need to resolve them before the simulation can run successfully. Also, make sure that Gazebo is properly installed and configured on your system.
+
+Please adapt the commands and paths based on your specific project structure and ROS version. If you encounter any issues or have additional details about your environment, feel free to provide more information for further assistance.
+
 Here my report on the robot: [shell](https://github.com/lucaricciatl/shellbot-urdf/blob/main/relazione%20shell%20robot%20.pdf)
